@@ -1,0 +1,72 @@
+body {
+
+}
+
+.notification 
+{
+	float: right;
+}
+
+.not
+{
+	height: 6%;
+}
+
+.vItem {
+    height: 50%;
+}
+
+.logo {
+	 text-align: center;
+	 width: 80; 
+	 max-width: 100;
+}
+
+h1 {
+	font-family:"Franklin Gothic Book";
+}
+
+.collapse {
+	background: #FBEF7E;
+	font-family:Arial;
+}
+
+.chk 
+{
+	padding-right: 90px;
+	text-align: right;
+	line-height: 20px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: Gray;
+}
+
+.tblContact
+{
+	width: 50%;
+	text-align: center;
+}
+
+input[type=submit]
+{
+	border: 1px solid white;
+	width: 100%;
+	padding: 5px;
+	/*background-color: Blue;*/
+}
+
+.error
+{
+	padding: 5px 0px 0px 5px;
+}
+
+.viewItem
+{
+	float: left;
+	width: inherit;
+}
+.viewItemLbl
+{
+	text-align: right;
+}

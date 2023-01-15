@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KBItemTracker", ".", "{7A95E964-5D10-41E9-B613-BB80E6C47B3C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Frontpage = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/KBItemTracker"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Year4\PROG3180\KBItemTracker\KBItemTracker\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\KBItemTracker\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/KBItemTracker"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Year4\PROG3180\KBItemTracker\KBItemTracker\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\KBItemTracker\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49466"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A95E964-5D10-41E9-B613-BB80E6C47B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A95E964-5D10-41E9-B613-BB80E6C47B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,625 @@
+﻿<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>KB Item Tracker</title>
+    <link href="css/themes/default/jquery.mobile-1.1.1.css" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/KBIT.css" rel="stylesheet" type="text/css" />
+
+    <!-- JavaScript HTML requirements -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-1.1.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+    <!-- custom js scripts -->
+    <script src="js/websqlAddItem.js" type="text/javascript"></script>
+    <script src="js/basicCustom.js" type="text/javascript"></script>
+
+    <!-- jQuery DatePicker (Calendar) -->
+    <script src="js/datePicker/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <link href="css/datePicker/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/datePicker/jquery-ui-1.10.3.custom2.min.js" type="text/javascript"></script>
+    <script src="js/datePicker/jquery-ui-1.10.3.custom3.min.js" type="text/javascript"></script>
+    <script src="js/datePicker/jquery-ui-1.10.3.custom4.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+    <header data-role="header">
+    <div class="notification">
+        <img src="images/notificationNone.jpg" alt="" class="not" />
+    </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b" 
+                class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content">
+        <img src="images/logo.jpg" alt="Getting Started" class="logo">
+        <div style="float: right;">
+            <input id="btnAboutUs" type="button" data-theme="a" value="i" />
+        </div>
+
+        <a href="#updates">
+        	<h4>Updates</h4>
+        </a>
+        
+    	<h4><strong>Getting Started / F.A.Q.</strong></h4>
+        
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: What is KB Item Tracker?</b></h3><br /> 
+	    	<b>ANSWER: </b>KB Item Tracker is an application that keeps track of all the items you lent out or borrowed/rented.
+	    	It also provides other information such as when the transaction occured, when needs to be returned, who or 
+	    	what place is it for this transaction... and more!
+	    	<ul><u>Example</u>
+	    	   <li>You lent $20 cash to a friend.</li>
+	    	   <li>You rented out a library book and it will be due in three weeks from today.</li>
+	    	   <li>You borrowed 5 seasons of a TV series from your brother and needs to be returned in a week.</li>
+	    	</ul>
+        </div>
+        
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: If I exit the application, will it keep <br/>
+                   all my data and information within this <br />
+                   application?</b></h3><br />
+	    	<b>ANSWER: </b>Yes.
+        </div>
+        
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: How to add item?</b></h3>
+	    	<ol>
+	    		<b>ANSWER</b><li>Click on Add Item tab.</li>
+	    		<li>Fill out all fields to gather information.</li>
+	    		<li>Click on Add button. Item will be stored within the application.</li>
+	    	</ol>
+        </div>
+        
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: How to update an item?</b></h3><br />
+            <ol>
+	    	   <b>ANSWER</b><li>Click on View Item tab</li>
+               <li>Click Display Item button (if items are not showing)</li>
+               <li>Click on which ever item below you want to update</li>
+               <li>Click on UPDATE ITEM</li>
+               <li>Change data in desired fields</li>
+               <li>Click on Update button</li>
+               <li>Click OK twice</li>
+               <li>The item is now updated</li>
+            </ol>
+        </div>
+
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: How to delete an item?</b></h3><br />
+            <ol>
+	    	   <b>ANSWER</b><li>Click on View Item tab</li>
+               <li>Click Display Item button (if items are not showing)</li>
+               <li>Click on which ever item below you want to update</li>
+               <li>Click on DELETE ITEM</li>
+               <li>Click OK to confirm deleting</li>
+               <li>The item is now deleted</li>
+            </ol>
+        </div>
+
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: What is the exclamation image in <br />
+                   the top-right corner?</b></h3><br />
+	    	<b>ANSWER: </b>This is the notification alert. It notifies you on certain items that have reached their "due date."
+            Click on the notification image to go to the notification page.
+        </div>
+        
+        <div data-role="collapsible" class="collapse">
+	       	<h3><b>Q: What if I have a question you did <br />
+                   not answer?</b></h3><br />
+	    	<b>ANSWER: </b>Click on the Contact Us tab.
+        </div>
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="dialog" data-transition="pop">
+    <header data-role="header">
+        <div class="notification">
+            <img src="images/notificationNone.jpg" alt="" class="not" />
+        </div>
+        <h1>Select an Action for this item.</h1>
+    </header>
+    <section data-role="content">
+        <div data-role="navbar">
+        <ul>
+            <li><a href="#updateItem" id="liUpdate" data-icon="forward" 
+            		data-theme="b">UPDATE</a></li>
+        </ul>
+        <ul>
+            <li><a href="#" data-icon="delete" id="btnDelete" data-theme="b" 
+            		type="button">DELETE</a>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#viewItem" data-icon="grid" data-theme="b" 
+            		type="button">CANCEL</a>
+            </li>
+        </ul>
+        </div>
+    </section>
+    <footer data-role="footer">
+        &copy; 2013
+    </footer>
+</div>
+
+<div data-role="page" id="item">
+    <header data-role="header">
+       <div class="notification">
+        <img src="images/notificationNone.jpg" alt="" class="not" />
+       </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b"
+                class="ui-btn-active ui-state-persist">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		</ul>
+	</div>
+    </header>
+
+    <section data-role="content">
+    	<h3>Add Item</h3><br />
+        <form id="frmAddItem" name="frmAddItem" data-ajax="false">
+		<table>
+           <tr>
+              <td>
+                <select id="ddlTransactionType" name="ddlTransactionType"
+                    class="required" title="Please select a type of 
+                        Transaction.">
+                     <option selected="selected" value="">--Select Transaction--
+                     </option>
+                     <option value="Borrowing">I am Borrowing</option>
+                     <option value="Lending">I am Lending</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="ddlTransactionType" class="error"
+                    style="font-weight:bold" generated="true"></label>
+               </td>
+            </tr>
+            <tr>
+              <td><select id="ddlItemType" class="required" 
+                    name="ddlItemType" title="Please select a type of Item.">
+                     <option selected="selected" value="">
+                        --Select Item Type--
+                     </option>
+                     <option value="Money">Money</option>
+                     <option value="Entertainment">Entertainment</option>
+                     <option value="Book">Book</option><option>Vehicle</option>
+                     <option value="Electronics">Electronics</option>
+                     <option value="Clothing">Clothing</option>
+                     <option value="Computer">Computer</option>
+                     <option value="Computer Accessories">
+                        Computer Accessories
+                     </option>
+                     <option value="Furniture">Furniture</option>
+                     <option value="Health">Health</option>
+                     <option value="Crafts">Crafts</option>
+                     <option value="Home Appliance">Home Appliance</option>
+                     <option value="Music">Music</option>
+                     <option value="Tools">Tools</option>
+                     <option value="Others">Others</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="ddlItemType" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+            </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>
+              <td><input id="txtName" name="txtName" class="required" 
+                    type="text" placeholder="Name" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="txtName" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+           </tr>
+           <tr>
+              <td>
+                 <input type="text" id="datepicker" placeholder="Start Date"
+                    class="required date" name="datepicker"
+                    title="Please select a Transaction Date." />
+              </td>
+           </tr>
+           <tr>
+              <td>
+                  <label for="datepicker" class="error"
+                    id="lblDatePicker" style="font-weight:bold" 
+                    generated="true"></label>
+              </td>
+           </tr>
+           <tr>
+              <td>
+                 <input type="text" id="datepicker1" placeholder="Due Date"
+                    class="required date" name="datepicker1"
+                    title="Please select a Due Date." />
+              </td>
+           </tr>
+           <tr>
+              <td>
+                  <label for="datepicker1" class="error"
+                    style="font-weight:bold" id="lblDatePicker1"
+                    generated="true"></label>
+              </td>
+           </tr>
+           <tr>
+              <td><input id="txtPersonPlace" type="text" class="required" 
+                    placeholder="Person/Place" name="txtPersonPlace" />
+              </td>
+           </tr>
+           <tr>
+               <td>
+                  <label for="txtPersonPlace" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+           </tr>
+           <tr>
+              <td class="chk"><input id="chkIsCompleted" 
+                type="checkbox" />Is Completed?
+              </td>
+           </tr>
+           <tr>
+              <td><input id="btnSubmitItem" type="submit" value="Add"
+                    data-theme="e" /></td>
+           </tr>
+        </table>
+        </form>
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="notification">
+    <header data-role="header">
+       <div class="notification">
+        <img src="images/notificationNone.jpg" alt=""  class="not" />
+       </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		</ul>
+	</div>
+    </header>
+      
+    <section data-role="content">
+        <div style="text-align: center;">
+		<h3>Notification</h3>	
+        <p style="color: Red">
+            <label id="lblNot">There are no notifications at this moment.</label><br />
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <input id="btnNot" type="button" data-theme="b" data-inline="false" 
+                    value="Click here to display notifications." />
+            </fieldset>
+        </p>
+
+        <ul id="lstNot" data-role="listview" data-split-icon="info" data-inset="true">
+            <li></li>
+        </ul>
+        </div>
+
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="contact">
+    <header data-role="header">
+        <div class="notification">
+            <img src="images/notificationNone.jpg" alt="" class="not" />
+        </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b" 
+                class="ui-btn-active ui-state-persist">Contact Us</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content" style="text-align:center;">
+        <h3>Contact Us</h3>
+        <a href="mailto:kbitemtracker@gmail.com">Tap here to email me any of your questions or comments.</a>
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="viewItem">
+    <header data-role="header">
+        <div class="notification">
+            <img src="images/notificationNone.jpg" alt="" class="not" />
+        </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b"
+                class="ui-btn-active ui-state-persist">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content" style="text-align:center;">
+        
+        <h3>View Item</h3>
+
+        <fieldset data-role="controlgroup" data-type="horizontal" style="border: 2px solid black;">
+            <legend>Filters</legend>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <select id="ddlfTransaction" data-theme="a">
+                            <option value="0">TRANSACTION TYPE</option><option>Borrowing</option>
+                            <option>Lending</option>
+                        </select>
+                        <select id="ddlfItemType" data-theme="a">
+                            <option value="0">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITEM&nbsp;TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            <option>Money</option>
+                            <option>Entertainment</option><option>Book</option><option>Vehicle</option>
+                            <option>Electronics</option><option>Clothing</option><option>Computer</option>
+                            <option>Computer Accessories</option><option>Furniture</option><option>Health</option>
+                            <option>Crafts</option><option>Home Appliance</option><option>Music</option>
+                            <option>Tools</option><option>Others</option>
+                        </select>
+                        <select id="ddlfIsCompleted" data-theme="a">
+                            <option value="0">
+                            &nbsp;&nbsp;&nbsp;&nbsp;IS&nbsp;COMPLETED?&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            <option>Yes</option><option>No</option>
+                        </select><br /><br />
+                        <input id="txtfItemName" type="text" placeholder="Item Name" style="padding-top: 5px;" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <button id="btnDisplay" data-theme="b" data-inline="false">Display Item</button><br />
+        <ul id="lstAll" data-role="listview" data-split-icon="info" data-inset="true">
+            <li><label id="lblLstAll">Click on button to display all items.</label></li>
+        </ul>
+
+    </section>
+
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="updateItem">
+    <header data-role="header">
+        <div class="notification">
+            <img src="images/notificationNone.jpg" alt="" class="not" />
+        </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		 <ul>
+			<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b"
+                class="ui-btn-active ui-state-persist">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		 </ul>
+		</div>
+    </header>
+
+    <section data-role="content" style="text-align:center;">
+        <h3>Update Item</h3>
+        <form id="frmUpdate" name="frmUpdate" data-ajax="false">
+            <table>
+            <tr>
+                <td>
+                    <select id="ddlTTUpdate" class="required" name="ddlTTUpdate"
+                        title="Please select a type of Transaction.">
+                        <option value="">--Select Transaction--</option>
+                        <option value="Borrowing">I am Borrowing</option>
+                        <option value="Lending">I am Lending</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="ddlTTUpdate" class="error"
+                    style="font-weight:bold" generated="true"></label>
+               </td>
+            </tr>
+            <tr>
+              <td><select id="ddlITUpdate" class="required" 
+                    name="ddlITUpdate" title="Please select a type of Item.">
+                     <option selected="" value="">
+                        --Select Item Type--
+                     </option>
+                     <option value="Money">Money</option>
+                     <option value="Entertainment">Entertainment</option>
+                     <option value="Book">Book</option><option>Vehicle</option>
+                     <option value="Electronics">Electronics</option>
+                     <option value="Clothing">Clothing</option>
+                     <option value="Computer">Computer</option>
+                     <option value="Computer Accessories">
+                        Computer Accessories
+                     </option>
+                     <option value="Furniture">Furniture</option>
+                     <option value="Health">Health</option>
+                     <option value="Crafts">Crafts</option>
+                     <option value="Home Appliance">Home Appliance</option>
+                     <option value="Music">Music</option>
+                     <option value="Tools">Tools</option>
+                     <option value="Others">Others</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="ddlITUpdate" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+            </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>
+                  <input id="txtItemNameU" type="text" name="txtItemNameU" placeholder="Item Name" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="txtItemNameU" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="datepicker2" type="text" name="datepicker2" placeholder="Transaction Date"
+                        class="required date" title="Please select a transaction date." />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="datepicker2" class="error" style="font-weight:bold" 
+                        generated="true"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="datepicker3" type="text" name="datepicker3" placeholder="Due Date"
+                        class="required date" title="Please select a due date." />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="datepicker3" class="error" style="font-weight:bold" 
+                        generated="true"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="txtBLU" type="text" name="txtBLU" placeholder="Borrower/Lender"
+                        class="required" />
+                </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="txtBLU" class="error"
+                    style="font-weight:bold" generated="true"></label>
+              </td>
+            </tr>
+            <tr>
+              <td><input id="chkIsCompletedU" name="chkIsCompletedU"
+                type="checkbox" />Is Completed?</td>
+           </tr>
+           <tr>
+              <td><input id="btnUpdate" type="submit" value="Update"
+                    data-theme="e" /></td>
+           </tr>
+        </table>
+        </form>
+    </section>
+
+</div>
+
+<div data-role="page" id="updates">
+    <header data-role="header">
+        <div class="notification">
+            <img src="images/notificationNone.jpg" alt="" class="not" />
+        </div>
+        <h1>KB Item Tracker</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#home" data-icon="home" data-theme="b"
+                class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#item" data-icon="plus" data-theme="b">Add Item</a></li>
+            <li><a href="#viewItem" data-icon="search" data-theme="b">View Item</a></li>
+            <li><a href="#contact" data-icon="grid" data-theme="b">Contact Us</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content" style="text-align:center;">
+        <h3>UPDATES</h3>
+
+        <p>
+            <b>December 21st, 2013</b><br />
+            Search filter added.<br />
+        </p>
+        <p>
+            <b>December 20th, 2013</b><br />
+            Notification feature included.<br />
+            Contact Us page functioning.
+        </p>
+        <p>
+           <b>December 17th, 2013</b><br />
+           Menu tabs are properly functioning.
+        </p>
+		<p>
+           <b>November 17th, 2013</b><br />
+           User can now update and/or delete items.
+        </p>
+        <p>
+           <b>October 20th, 2013</b><br />
+           User can now insert items into Web SQL.<br />
+           Users can now choose date by calendar controls instead of typing.
+        </p>
+
+    </section>
+
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+</body>
+</html>
